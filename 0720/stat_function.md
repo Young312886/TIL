@@ -31,3 +31,41 @@
 * 범위(Scope)
 * 결과값 (output)
 
+특이 사항
++ return 을 만나게 되면 함수가 종료 
++ return이 없다면 반환하는 값이 없음
++ print 는 return이 아님을 반드시 알자
+
++ Prameter 는 정의때의 변수 / Argument 는 호출시 넣는 값
+  + 함수의 Argument는 기본적으로 Positional로 들어간다
+  + 하지만 x = x, y = y 처럼 keyword argument 가능
+  + 단, keyword 다음에 positional은 불가능
+  + parameter 설정 시 default argument 설정 가능
+
++ 가변인자(*) (튜플로 처리)
+  + 몇개의 Positional argument를 받아야 할지 모르는 상황에서 활용
+  + *를 활용하면 언패킹시 남는 변수를 리스트에 담아둘 수 있음 (원래는 오류 발생함)
+  + 추가로 가변인자의 경우 추가적인 인자로 인식 가능 (옵션, 없어도 무방)
+
++ 가변 키워드 인자 (**)
+  + 딕셔너리로 묶여 처리
+  + 받은 변수안에 keyword arguments가 들어오게 되고, 이를 딕셔너리 형태로 저장시켜줌
+
++ Scope (local/global)
+  + global 은 어디서든
+  + local은 함수의 scope 안에서
+    + 변수의 수명 주기(name space가 기준이 된다)
+      + built-in 은 실행 이후부터 
+      + global은 인터프리터 종료 전까지
+      + local은 함수 종료 전까지
+      +  * name space 순서 = local < enclosed < global < built-in 
+ + Global
+   + 이러한 변수의 전역으로 선언하기 위해선 global 변수 형식으로 설정, 함수 안과 밖에서 변화된 값이 이후에도 사용될 수 있다.
+   + Parameter값에 global 사용 불가능
+   + global 선언 이전에 변수 사용 불가능
+ + nonlocal
+   + enclosed scope 에서의 변수 활용 여부 설정
+   + 다만 global에는 영향을 주지 않음
+   + 또한 이미 할당된, 선언된 변수에다가만 활용 가능
+
++filter / zip / map / lambda
