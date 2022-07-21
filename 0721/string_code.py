@@ -49,3 +49,65 @@
 # print(len(a))
 
 #2908
+
+# a,b = map(str, input().split())
+# a1, b1 = int(a[::-1]), int(b[::-1])
+# if a1 >= b1 :
+#     print(a1)
+# else :
+#     print(b1)
+
+# # 5622
+# a = list(input())
+# num_list = [["A","B","C"],["D","E","F"],["G","H","I"],["J","K","L"],
+# ["M","N","O"],["P","Q","R","S"],["T","U","V"],["W","X","Y","Z"]]
+# result = 0
+# for i in a:
+#     for idx, j in enumerate(num_list,start = 3):
+#         if i in j:
+#             result += idx
+#         else : continue
+# print(result)
+ 
+
+# 2941
+
+# new_list = ["c=","c-","dz=","d-","lj","nj","s=","z="]
+# word = input()
+# for i in new_list:
+#     word = word.replace(i, "p")
+# print(len(word))
+
+t = int(input())
+k = [1]*t
+for idx,i in enumerate(range(t)):
+    word = input()
+    single = sorted(list(set(list(word))))
+    for j in single:
+        counter = word.count(j)
+        if counter == 1:
+            continue
+        else :
+            place = word.find(j)
+            counter2 = 1
+            i = 1
+            while True:
+                if (place + i) == (len(word)):
+                    if counter == counter2:
+                        break
+                    else :
+                        k[idx] = False
+                        break
+                if word[place] == word[place+i]:
+                    i += 1
+                    counter2 += 1
+                    continue
+                else :
+                    if counter == counter2:
+                        break
+                    else :
+                        k[idx] =False
+                        break
+print(sum(k))
+        # 1개면 패스
+        # 여러개이다. 찾아보도록 / 어 근데 연속되는거 다 찾음 근데 count랑 안 맞음 땡
