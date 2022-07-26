@@ -83,7 +83,7 @@ def mass_percent():
     water_list = []
     n = 1
     while n < 5:
-        a = input("소금물의 농도(%)와 소금물의 양(g)을 입력하십시오 :")
+        a = input(f"{n}.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오 :")
         if a != "Done":
             water_list.append(list(a.split()))
             n+=1
@@ -94,9 +94,25 @@ def mass_percent():
     water = 0
     for i in water_list:
         x , y = int(i[0][:-1]), int(i[1][:-1])
-        print(x,y)
         salt += x * y
         water += y
     print(f"{x/y*100:.1f}% {y:.1f}g")
 
 mass_percent()
+
+# 애너그램 단위 그루핑
+
+def group_anarams(words):
+    result = []
+    group_dic = dict()
+    for i in words:
+        anagram = sorted(list(i))
+        if anagram in group_dic:
+            group_dic[anagram] = group_dic[anagram].append(i)
+        else :
+            group_dic[anagram] = [i]
+    for j in group_dic.values():
+        result.append(j)
+    return result
+# new = group_anarams(['eat','ate','tea','nat','tan','bat'])
+# print(new)
