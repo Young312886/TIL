@@ -21,3 +21,18 @@ white.get_status()
 del white
 blue = Doggy("black","Dockshunt")
 blue.get_status()
+
+from faker import Faker
+import random
+
+fake1 = Faker('ko_KR')
+Faker.seed(87654321)
+print(fake1.name())
+fake2 = Faker('ko_KR')
+print(fake2.name())
+
+fake2 = Faker('ko_KR')
+fake1.seed_instance(87654321)
+print(fake1.name())
+fake2 = Faker('ko_KR')
+print(fake2.name())
