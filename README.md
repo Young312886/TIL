@@ -24,7 +24,7 @@ Mostly about the Python basics
 
 - [마크다운](https://github.com/Young312886/Pystudy)
 
-##### Git  학습(0714)
+##### Git  Practice(0714)
 
 - [깃허브 기초](https://github.com/Young312886/TIL/tree/master/0714)
 

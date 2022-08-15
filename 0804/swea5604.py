@@ -30,18 +30,16 @@ b = 20
 t = 0 
 n = 1
 while b > 0:
-    k = a // 10
-    j = b // 10
-    m = a % 10
-    n = b % 10
-    q = n - m
-    p = j -k
-    if p < 0:
-        preserve = sum(range(j,j+q+1))
+    low_upper = a // 10
+    big_upper = b // 10
+    low_down = a % 10
+    big_down = b % 10
+    if (big_upper - low_upper)<= 10:
+        preserve = 45 * n + sum(range(0,low_down)) * n
+        
     else : 
-        preserve = 45
-    t += preserve * q * n
-    t += p * n
-    a = k
-    b = j 
+        preserve = 45 * n + sum(range(0,low_down)) * n
+    t += preserve
+    a = low_upper
+    b = big_upper
 print(t)
