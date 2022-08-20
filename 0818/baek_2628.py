@@ -10,7 +10,7 @@ for _ in range(int(input())):
 row.sort()
 comlumn.sort()
 max_size = 0
-print(row, comlumn)
+# print(row, comlumn)
 for i in range(len(row)-1):
     for j in range(len(comlumn)-1):
         size = (row[i+1]-row[i]) * (comlumn[j+1]-comlumn[j])

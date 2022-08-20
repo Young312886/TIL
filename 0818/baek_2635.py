@@ -11,12 +11,11 @@ def numbering(start,i,list1):
     else:
         list1.append(start-i)
         return numbering(i,start-i,list1)
-max_len = 0
-for k in range(F//4,F):
+result = []
+for k in range(0,F+1):
     list1 = [F,k]
     q = numbering(F,k,list1)
-    if len(q) > max_len:
-        max_len = len(q)
+    if len(q) > len(result):
         result = q
-print(max_len)
+print(len(result))
 print(*result)
