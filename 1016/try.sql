@@ -1,0 +1,4 @@
+CREATE TABLE test (
+    a INTEGER NOT NULL,
+    B INTEGER NOT NULL
+);
