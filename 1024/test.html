@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button></button>
+  <script>
+    // 이곳에 코드를 작성합니다.
+    const atag = document.createElement('a')
+    atag.innerText = 'SSAFY'
+    atag.setAttribute('href', 'https://www.ssafy.com/')
+    atag.addEventListener('click', function(event) {
+      event.preventDefault()
+    })
+    const body = document.querySelector('body')
+    console.log(body)
+    body.appendChild(atag)
+    const buttontag = document.createElement('button')
+    buttontag.innerText = '로그 출력'
+    buttontag.addEventListener('click', function(event) {
+      console.log('버튼을 클릭하였습니다!')
+    })
+    body.appendChild(buttontag)
+  </script>
+</body>
+</html>
+

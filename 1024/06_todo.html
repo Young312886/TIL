@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#">
+    <input type="text" class="inputData">
+    <input type="submit" value="Add">
+  </form>
+  <ul></ul>
+
+  <script>
+    const formtag = document.querySelector('form')
+    formtag.addEventListener('submit', function(event) {
+      event.preventDefault()
+      const inputtag = document.querySelector('.inputData')
+      const data = inputtag.value
+
+      if (data.trim()) {
+        const litag = document.createElement('li')
+        litag.innerText = data
+
+        const ultag = document.querySelector('ul')
+        ultag.appendChild(litag)
+      } else {
+        alert('할일 입력 필수')
+      }
+      event.target.reset()
+    })
+  </script>
+</body>
+</html>
