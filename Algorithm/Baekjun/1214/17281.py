@@ -8,6 +8,7 @@
 # single_score.sort(key=lambda x : x[1],reverse=True)
 # batters = [p[0] for p in single_score[:3]] + [0] + [p[0] for p in single_score[3:]]
 # print(batters)
+
 from itertools import permutations
 import sys
 input = sys.stdin.readline
