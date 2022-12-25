@@ -9,7 +9,7 @@ def binary(left, right):
     if left <= right:
         middle = (left+right) // 2
         output = sum(i-middle for i in trees if i > middle)
-        print(left, middle, right)
+        # print(left, middle, right)
         if output >= t:
             binary(middle+1, right)
         else:
