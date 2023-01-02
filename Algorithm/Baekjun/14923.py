@@ -33,19 +33,18 @@
 
 import sys
 input = sys.stdin.readline
-# from collections import deque
+from collections import deque
 
 n, m = map(int, input().split())
 
 maze = [list(input().rstrip()) for _ in range(n) ]
-print(maze)
-stack = [(0,0,0)]
+stack = deque([(0,0,0)])
 visited = [[[0] * 2 for _ in range(m)] for _ in range(n)]
 visited[0][0][0] = 1
 d = [(0,1),(1,0),(-1,0),(0,-1)]
 def bfs():
     while stack:
-        ni, nj, magic = stack.pop(0)
+        ni, nj, magic = stack.popleft()
         if ni == n-1 and nj == m-1:
             return visited[ni][nj][magic]
         for di, dj in d:
