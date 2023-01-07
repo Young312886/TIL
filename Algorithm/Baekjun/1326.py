@@ -7,7 +7,7 @@ stack = [(s,0)]
 def bfs():
     while stack:
         now, times = stack.pop(0)
-        if now > n or now < 0:
+        if now >= n or now < 0:
             continue
         elif now == t:
             return times

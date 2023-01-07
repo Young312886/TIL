@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    function App () {
+        const [counter, setCounter] = React.useState(0)
+        const onClick = () => {
+            setCounter(counter + 1) ;
+            // 만약 현재 값이 과거 값과 달라졌을 경우, 현재의 값을 활용하여 업데이트 하는 방법
+            // setCounter((current) => current + 1)
+            // 이 방법이 더욱 안전하고 확실한 방법이다 / 이 방법을 활용하자
+
+
+            // state 와 modifier 을 사용하지 않을 경우, rerender가 발생하지 않는다
+            // counter = counter + 1
+            // console.log(counter)
+        }
+        return (
+            <div>
+            <h3> Total Click : {counter} </h3>
+            <button onClick={onClick}> Click me </button>
+        </div>
+        )
+    }
+
+    ReactDOM.render( <App/>, root)
+  </script>
+</html>
