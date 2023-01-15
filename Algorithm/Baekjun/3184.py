@@ -28,7 +28,7 @@ for i in range(n):
                     if visited[si+di][sj+dj] == 0 and yard[si+di][sj+dj] != "#":
                         visited[si+di][sj+dj] = 1
                         stack.append((si+di, sj+dj))
-        print(sheep, wolf)
+        # print(sheep, wolf)
         if out:
             continue
         else:
