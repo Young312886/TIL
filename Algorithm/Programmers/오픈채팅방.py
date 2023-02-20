@@ -16,11 +16,10 @@ def solution(record):
     bank = []
     for user, action in answer:
         if action == 1:
-            bank.append(house[user], "님이 들어왔습니다.")
+            bank.append(f"{house[user]}님이 들어왔습니다.")
         else:
-            bank.append(house[user], "님이 나갔습니다.")
+            bank.append(f"{house[user]}님이 나갔습니다.")
     return bank
-    
-    return answer
+
 
 solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
