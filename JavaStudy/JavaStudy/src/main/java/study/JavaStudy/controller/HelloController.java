@@ -23,7 +23,7 @@ public class HelloController {
     public String helloString(@RequestParam("name") String name){
         Hello hello = new Hello();
         hello.setName(name);
-        return hello;
+        return  "true";
     }
     static class Hello{
         private String name;
