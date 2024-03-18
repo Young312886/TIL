@@ -1,0 +1,5 @@
+def solution(n):
+    str1 = str(n)
+    
+    answer = list(map(int, str1[::-1]))
+    return answer
